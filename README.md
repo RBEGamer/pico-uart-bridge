@@ -21,3 +21,12 @@ Raspberry Pi Pico Pinout
 | GPIO5 (Pin 7)          | UART1 RX     |
 | GPIO17 (Pin 22)        | UART1 TX LED |
 | GPIO16 (Pin 21)        | UART1 RX LED |
+
+Build
+-----
+
+```bash
+$ git clone https://github.com/RBEGamer/pico-uart-bridge.git
+$ cd pico-uart-bridge
+$ bash ./build.sh
+```
