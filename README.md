@@ -29,4 +29,6 @@ Build
 $ git clone https://github.com/RBEGamer/pico-uart-bridge.git
 $ cd pico-uart-bridge
 $ bash ./build.sh
+# OR FOR PICO-2
+$ bash ./build.sh pico2
 ```
