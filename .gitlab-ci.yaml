@@ -1,0 +1,30 @@
+stages:
+  - build
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+.build_template: &build_template
+  stage: build
+  image: ubuntu:22.04
+  before_script:
+    - apt-get update
+    - DEBIAN_FRONTEND=noninteractive apt-get install -y git build-essential cmake python3 gcc-arm-none-eabi libnewlib-arm-none-eabi
+
+build_pico:
+  <<: *build_template
+  script:
+    - ./build.sh pico
+  artifacts:
+    paths:
+      - build/pico/uart_bridge.uf2
+    expire_in: 1 week
+
+build_pico2:
+  <<: *build_template
+  script:
+    - ./build.sh pico2
+  artifacts:
+    paths:
+      - build/pico2/uart_bridge.uf2
+    expire_in: 1 week
